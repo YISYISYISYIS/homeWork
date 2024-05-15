@@ -25,11 +25,11 @@ const App = () => {
 
   const ChangeCard = (id)=>{
     setCards(Cards.map((card)=>{
-      if(id.isDone === false){
-       return Cards.isDone = true;
-      }else{
-       return Cards.isDone = false;
-      }
+     if(id === card.id){
+      return {...card, isDone: !card.isDone};
+     }else{
+      return card;
+     }
     }));
   };
 
