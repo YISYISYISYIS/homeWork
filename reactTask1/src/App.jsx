@@ -25,7 +25,11 @@ const App = () => {
 
   const ChangeCard = (id)=>{
     setCards(Cards.map((card)=>{
-      
+      if(id.isDone === false){
+       return Cards.isDone = true;
+      }else{
+       return Cards.isDone = false;
+      }
     }));
   };
 
@@ -48,16 +52,31 @@ const App = () => {
       </form>
       <h1>working</h1>
       <div style={{display: "flex", flexWrap: "wrap"}}>
-        {Cards.map((card)=>(
+        {Cards.filter((card)=>(card.isDone === false)).map((card)=>(
           <div key = {card.id} style ={{display: "flex",flexDirection: "column", alignItems: "center",border: "1px solid #000", width: "300px", height: "200px", margin: "1rem"}}>
             <h2>{card.title}</h2>
             <p>{card.content}</p>
-            <button onClick={()=>{removeCard(card.id)}}>삭제하기</button>
+            <div style={{display: "flex"}}>
+              <button onClick={()=>{removeCard(card.id)}}>삭제하기</button>
+              <button onClick={()=>{ChangeCard(card.id)}}>완료</button>
+            </div>
           </div>
         ))}
       </div>
       <div>
         <h1>Done</h1>
+        <div style={{display: "flex", flexWrap: "wrap"}}>
+        {Cards.filter((card)=>(card.isDone === true)).map((card)=>(
+          <div key = {card.id} style ={{display: "flex",flexDirection: "column", alignItems: "center",border: "1px solid #000", width: "300px", height: "200px", margin: "1rem"}}>
+            <h2>{card.title}</h2>
+            <p>{card.content}</p>
+            <div style={{display: "flex"}}>
+              <button onClick={()=>{removeCard(card.id)}}>삭제하기</button>
+              <button onClick={()=>{ChangeCard(card.id)}}>취소</button>
+            </div>
+          </div>
+        ))}
+      </div>
       </div>
     </div>
   )
