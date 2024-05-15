@@ -10,14 +10,14 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
-  background-color: rgb(218, 184, 184);
+  /* background-color: rgb(218, 184, 184); */
   display: flex;
   justify-content: center;
 }
 .app{
   width: 1200px;
   min-width: 800px;
-  background-color: #acacac;
+  background-color: #fdfdfd;
 }
 /* .logo {
   height: 6em;
