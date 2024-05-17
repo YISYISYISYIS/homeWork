@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
 }
-.app{
+.app {
   width: 1200px;
   min-width: 800px;
   background-color: #fdfdfd;
